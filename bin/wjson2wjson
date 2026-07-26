@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+// # Usage: wjson2wjson < $json-file > $wjson-file ; Reformats a strong or weak JSON string to weak JSON, with a normalized layout.
+
+const wJSON = require("../src/wJSON.js")
+console.log(wJSON.stringify(wJSON.parse(require("fs").readFileSync(require("process").stdin.fd, "utf-8"))));
+
