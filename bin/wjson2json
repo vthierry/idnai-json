@@ -2,5 +2,5 @@
 
 // # Usage: wjson2json < wjson-file > json-file ; Reformats a strong or weak JSON string to a standard JSON, with a normalized layout.
 
-const wJSON = require("../src/wJSON.js")
+const wJSON = require("../docs/wJSON.js")
 console.log(JSON.stringify(wJSON.parse(require("fs").readFileSync(require("process").stdin.fd, "utf-8")), null, 2));
