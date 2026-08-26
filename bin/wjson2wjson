@@ -1,7 +1,15 @@
 #!/usr/bin/env node
 
-// # Usage: wjson2wjson < $json-file > $wjson-file ; Reformats a strong or weak JSON string to weak JSON, with a normalized layout.
-
+const transform = require("../../idnai-make/src/transform.js")
 const wJSON = require("../docs/wJSON.js")
-console.log(wJSON.stringify(wJSON.parse(require("fs").readFileSync(require("process").stdin.fd, "utf-8"))));
+
+if (process.argv.length > 2 && ["-h", "--help"].includes(process.argv[2]) || ![2, 3, 4].includes(process.argv.length)) {
+  console.log(`
+Usage: wjson2wjson [\$json-input [\$wjson-output]]
+- Reformats a strong or weak JSON string to weak JSON, with a normalized layout.
+`);
+  exit();
+}
+
+transform(input => wJSON.stringify(wJSON.parse(input)), argv.slice(2));
 
