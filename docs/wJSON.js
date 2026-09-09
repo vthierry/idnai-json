@@ -1,4 +1,4 @@
-/** Implements the JSON5 weak-syntax reader and writer.
+/** Implements an improved JSON5 weak-syntax reader and writer.
  * @class
  */
 var wJSON = {
