@@ -1,6 +1,22 @@
 #!/usr/bin/env node
 
-// # Usage: wjson2html < json-file > html-file ; Renders a strong or weak JSON string in HTML.
+const transform = require("../../idnai-make/docs/transform.js")
+const wJSON = require("../docs/wJSON.js")
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 11d2af464e4a807beb69d0b5bd6b6727c6c227fb
 const wJSON = require("../docs/wJSON.js")
 console.log(wJSON.stringify(wJSON.parse(require("fs").readFileSync(require("process").stdin.fd, "utf-8")), "html"));
+=======
+if (process.argv.length > 2 && ["-h", "--help"].includes(process.argv[2]) || ![2, 3, 4].includes(process.argv.length)) {
+  console.log(`
+Usage: wjson2html [\$json-input [\$html-output]]
+- Renders a strong or weak JSON string in HTML.
+`);
+  exit();
+}
+
+transform(input => wJSON.stringify(wJSON.parse(input), "html"), argv.slice(2));
+>>>>>>> 86bf4b629e25142cd2be502f2a46761e0364f219
