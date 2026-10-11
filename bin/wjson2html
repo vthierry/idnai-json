@@ -2,5 +2,5 @@
 
 // # Usage: wjson2html < json-file > html-file ; Renders a strong or weak JSON string in HTML.
 
-const wJSON = require("../src/wJSON.js")
+const wJSON = require("../docs/wJSON.js")
 console.log(wJSON.stringify(wJSON.parse(require("fs").readFileSync(require("process").stdin.fd, "utf-8")), "html"));
